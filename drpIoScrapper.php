@@ -154,7 +154,6 @@ function downloadFile($fileJson) {
     $content = file_get_contents($fileUrl);
     $fileName = $fileJson->xid . "-" . $fileJson->file;
     $filePath =  dirname(__FILE__) . "/downloaded_files/" . $fileName;
-//    copy($filePath, $fileUrl);
     file_put_contents($filePath, $content);
     echo("Downloaded File: " . $fileJson->xid . " \n ");
     error_log("Downloaded File: " . $fileJson->xid . " as " . $fileName . " " . json_encode($fileJson));
@@ -204,5 +203,7 @@ function intArrayToId($intArr) {
  *
  */
 function populateDataBase() {
-
+    /**
+     * Throw data into firebase
+     */
 }
